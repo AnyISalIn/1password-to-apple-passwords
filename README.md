@@ -16,7 +16,7 @@ Are you looking to switch from 1Password to Apple's built-in password manager? T
    - Run the following command to reshape the CSV content:
 
      ```bash
-     python -c "import csv, sys; r = csv.DictReader(sys.stdin); w = csv.writer(sys.stdout); w.writerow(['Title', 'URL', 'Username', 'Password', 'Notes', 'OTPAuth']); [w.writerow([row.get('Title', ''), row.get('Url', ''), row.get('Username', ''), row.get('Password', ''), row.get('Notes', ''), row.get('OTPAuth', '')]) for row in r]" < ./1PasswordExport-xxxxxxxx-20240827-181514.csv > apple_passwords_import.csv
+     python -c "import csv, sys; r = csv.DictReader(sys.stdin); w = csv.writer(sys.stdout); w.writerow(['Title', 'URL', 'Username', 'Password', 'Notes', 'OTPAuth']); [w.writerow([row.get('Title', ''), row.get('URL', ''), row.get('Username', ''), row.get('Password', ''), row.get('Notes', ''), row.get('OTPAuth', '')]) for row in r]" < ./1PasswordExport-xxxxxxxx-20240827-181514.csv > apple_passwords_import.csv
      ```
 
    Note: Replace `./1PasswordExport-xxxxxxxx-20240827-181514.csv` with the actual name of your 1Password export file.
